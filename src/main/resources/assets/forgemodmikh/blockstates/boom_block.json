@@ -1,0 +1,9 @@
+{
+  "variants": {
+
+    "": {
+      "model": "forgemodmikh:block/boom_block"
+    }
+
+  }
+}

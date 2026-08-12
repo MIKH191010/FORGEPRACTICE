@@ -1,6 +1,7 @@
 package net.MIKH.forgemodmikh.block;
 
 import net.MIKH.forgemodmikh.ForgeModMIKH;
+import net.MIKH.forgemodmikh.block.custom.BoomBlock;
 import net.MIKH.forgemodmikh.item.ModItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -32,6 +33,11 @@ public class ModBlock {
                     .strength(1f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.GRAVEL)
+            ));
+    public static final RegistryObject<Block> BOOM_BLOCK = registerBlock("boom_block",
+            () -> new BoomBlock(BlockBehaviour.Properties.of()
+                    .instabreak()
+                    .sound(SoundType.METAL)
             ));
     //-------------------------------------------------------------------
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

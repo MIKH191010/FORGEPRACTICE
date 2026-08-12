@@ -1,9 +1,12 @@
 {
   "item.forgemodmikh.poop": "Poop",
+  "item.forgemodmikh.chiseler": "Chiseler",
 
   "block.forgemodmikh.poop_block": "Block of Poop",
   "block.forgemodmikh.dried_poop_block": "Block of Dried Poop",
+  "block.forgemodmikh.boom_block": "BOOM Block",
 
   "creativetab.forgemodmikh.ItemTab": "ForgeModMIKH Items",
-  "creativetab.forgemodmikh.BlockTab": "ForgeModMIKH Blocks"
+  "creativetab.forgemodmikh.BlockTab": "ForgeModMIKH Blocks",
+  "creativetab.forgemodmikh.ToolTab": "ForgeModMIKH Tools"
 }

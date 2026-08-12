@@ -20,6 +20,7 @@ public class ModCreativeModeTab {
                     .title(Component.translatable("creativetab.forgemodmikh.ItemTab"))
                     .displayItems((itemDisplayParameters,output)->{
                         output.accept(ModItem.POOP.get());
+                        output.accept(ModItem.CHISELER.get());
                     })
                     .build()
     );//----------------------------------------BLOCKS
@@ -30,6 +31,16 @@ public class ModCreativeModeTab {
                     .displayItems((itemDisplayParameters,output)->{
                         output.accept(ModBlock.POOP_BLOCK.get());
                         output.accept(ModBlock.DRIED_POOP_BLOCK.get());
+                        output.accept(ModBlock.BOOM_BLOCK.get());
+                    })
+                    .build()
+    );//----------------------------------------TOOLS
+    public static final RegistryObject<CreativeModeTab> TABTOOLS = CREATIVE_MODE_TABS.register("forgemodmikh_tools",
+            ()-> CreativeModeTab.builder().icon(()-> new ItemStack(ModItem.CHISELER.get()))
+                    .withTabsBefore(TABBLOCK.getId())
+                    .title(Component.translatable("creativetab.forgemodmikh.ItemTab"))
+                    .displayItems((itemDisplayParameters,output)->{
+                        output.accept(ModItem.CHISELER.get());
                     })
                     .build()
     );//----------------------------------------

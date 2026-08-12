@@ -1,6 +1,7 @@
 package net.MIKH.forgemodmikh.item;
 
 import net.MIKH.forgemodmikh.ForgeModMIKH;
+import net.MIKH.forgemodmikh.item.custom.ChiselItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -13,6 +14,10 @@ public class ModItem {
 
     public static final RegistryObject<Item> POOP = ITEMS.register("poop",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CHISELER = ITEMS.register("chiseler",
+            () -> new ChiselItem(new Item.Properties()
+                    .durability(32)
+            ));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
