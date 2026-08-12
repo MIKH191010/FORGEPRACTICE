@@ -1,7 +1,8 @@
-package net.MIKH.examplemod;
+package net.MIKH.forgemodmikh;
 
 import com.mojang.logging.LogUtils;
-import net.MIKH.examplemod.item.PoopItem;
+import net.MIKH.forgemodmikh.block.ModBlock;
+import net.MIKH.forgemodmikh.item.ModItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -31,7 +32,8 @@ public class ForgeModMIKH
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
-        PoopItem.register(modEventBus);
+        ModItem.register(modEventBus);
+        ModBlock.register(modEventBus);
 
 
         // Register the item to a creative tab
@@ -47,8 +49,11 @@ public class ForgeModMIKH
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
-            event.accept(PoopItem.POOP);
+        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(ModItem.POOP);
+        }
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlock.POOP_BLOCK);
         }
     }
 

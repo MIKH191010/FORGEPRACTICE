@@ -1,4 +1,4 @@
-package net.MIKH.examplemod;
+package net.MIKH.forgemodmikh;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
