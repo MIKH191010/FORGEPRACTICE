@@ -1,5 +1,8 @@
 {
   "item.forgemodmikh.poop": "Poop",
 
-  "block.forgemodmikh.poop_block": "Block of Poop"
+  "block.forgemodmikh.poop_block": "Block of Poop",
+
+  "creativetab.forgemodmikh.ItemTab": "ForgeModMIKH Items",
+  "creativetab.forgemodmikh.BlockTab": "ForgeModMIKH Blocks"
 }

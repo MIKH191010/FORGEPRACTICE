@@ -2,6 +2,7 @@ package net.MIKH.forgemodmikh;
 
 import com.mojang.logging.LogUtils;
 import net.MIKH.forgemodmikh.block.ModBlock;
+import net.MIKH.forgemodmikh.item.ModCreativeModeTab;
 import net.MIKH.forgemodmikh.item.ModItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -31,6 +32,8 @@ public class ForgeModMIKH
         modEventBus.addListener(this::commonSetup);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+        ModCreativeModeTab.register(modEventBus);
 
         ModItem.register(modEventBus);
         ModBlock.register(modEventBus);
