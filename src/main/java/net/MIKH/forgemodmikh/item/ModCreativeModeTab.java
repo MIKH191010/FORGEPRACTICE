@@ -29,6 +29,7 @@ public class ModCreativeModeTab {
                     .title(Component.translatable("creativetab.forgemodmikh.BlockTab"))
                     .displayItems((itemDisplayParameters,output)->{
                         output.accept(ModBlock.POOP_BLOCK.get());
+                        output.accept(ModBlock.DRIED_POOP_BLOCK.get());
                     })
                     .build()
     );//----------------------------------------

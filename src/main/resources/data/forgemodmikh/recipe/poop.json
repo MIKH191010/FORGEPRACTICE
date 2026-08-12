@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients" : [  {"item" : "forgemodmikh:poop_block"}  ],
+
+  "result" : {
+    "count": 9,
+    "id" : "forgemodmikh:poop"
+
+  }
+}

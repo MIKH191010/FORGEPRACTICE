@@ -23,11 +23,16 @@ public class ModBlock {
     public static final RegistryObject<Block> POOP_BLOCK = registerBlock("poop_block",
             () -> new Block (BlockBehaviour.Properties.of()
                     .destroyTime(0.5f)
-                    .strength(1f)
-                    .requiresCorrectToolForDrops()
+                    .strength(0.5f)
                     .sound(SoundType.HONEY_BLOCK)
             ));
-
+    public static final RegistryObject<Block> DRIED_POOP_BLOCK = registerBlock("dried_poop_block",
+            () -> new Block (BlockBehaviour.Properties.of()
+                    .destroyTime(1f)
+                    .strength(1f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.GRAVEL)
+            ));
     //-------------------------------------------------------------------
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name,block);
