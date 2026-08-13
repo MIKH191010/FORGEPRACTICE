@@ -19,5 +19,7 @@
 
   "creativetab.forgemodmikh.ItemTab": "ForgeModMIKH Items",
   "creativetab.forgemodmikh.BlockTab": "ForgeModMIKH Blocks",
-  "creativetab.forgemodmikh.ToolTab": "ForgeModMIKH Tools"
+  "creativetab.forgemodmikh.ToolTab": "ForgeModMIKH Tools",
+
+  "tooltip.forgemikh.chiseler": "This thing scrapes outer dry layer of Dried Poop Blocks"
 }

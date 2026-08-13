@@ -2,6 +2,7 @@ package net.MIKH.forgemodmikh;
 
 import com.mojang.logging.LogUtils;
 import net.MIKH.forgemodmikh.block.ModBlock;
+import net.MIKH.forgemodmikh.component.ModDataComponentTypes;
 import net.MIKH.forgemodmikh.item.ModCreativeModeTab;
 import net.MIKH.forgemodmikh.item.ModItem;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -33,10 +34,16 @@ public class ForgeModMIKH
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
+
+
+//-----------------------------------------------------
         ModCreativeModeTab.register(modEventBus);
 
         ModItem.register(modEventBus);
         ModBlock.register(modEventBus);
+
+        ModDataComponentTypes.register(modEventBus);
+//-----------------------------------------------------
 
 
         // Register the item to a creative tab
