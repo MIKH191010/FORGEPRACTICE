@@ -61,6 +61,7 @@ public class ForgeModMIKH
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlock.POOP_BLOCK);
             event.accept(ModBlock.DRIED_POOP_BLOCK);
+            event.accept(ModBlock.VOID_BLOCK);
         }
         if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(ModBlock.BOOM_BLOCK);

@@ -5,6 +5,17 @@
   "block.forgemodmikh.poop_block": "Block of Poop",
   "block.forgemodmikh.dried_poop_block": "Block of Dried Poop",
   "block.forgemodmikh.boom_block": "BOOM Block",
+  "block.forgemodmikh.skull_lamp": "Skull Lamp",
+
+
+  "block.forgemodmikh.void_block": "Void Block",
+  "block.forgemodmikh.void_slab": "Void Slab",
+  "block.forgemodmikh.void_stair": "Void Stair",
+  "block.forgemodmikh.void_wall": "Void Wall",
+  "block.forgemodmikh.void_button": "Void Button",
+  "block.forgemodmikh.void_door": "Void Door",
+  "block.forgemodmikh.void_trapdoor": "Void TrapDoor",
+
 
   "creativetab.forgemodmikh.ItemTab": "ForgeModMIKH Items",
   "creativetab.forgemodmikh.BlockTab": "ForgeModMIKH Blocks",

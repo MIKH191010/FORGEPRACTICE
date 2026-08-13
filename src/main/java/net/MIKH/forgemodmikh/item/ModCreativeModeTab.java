@@ -15,7 +15,7 @@ public class ModCreativeModeTab {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ForgeModMIKH.MOD_ID);
     //----------------------------------------ITEMS
-    public static final RegistryObject<CreativeModeTab> TABITEM = CREATIVE_MODE_TABS.register("forgemodmikh_items",
+    public static final RegistryObject<CreativeModeTab> TABITEM = CREATIVE_MODE_TABS.register(ForgeModMIKH.MOD_ID + "_items",
             ()-> CreativeModeTab.builder().icon(()-> new ItemStack(ModItem.POOP.get()))
                     .title(Component.translatable("creativetab.forgemodmikh.ItemTab"))
                     .displayItems((itemDisplayParameters,output)->{
@@ -24,7 +24,7 @@ public class ModCreativeModeTab {
                     })
                     .build()
     );//----------------------------------------BLOCKS
-    public static final RegistryObject<CreativeModeTab> TABBLOCK = CREATIVE_MODE_TABS.register("forgemodmikh_blocks",
+    public static final RegistryObject<CreativeModeTab> TABBLOCK = CREATIVE_MODE_TABS.register(ForgeModMIKH.MOD_ID + "_blocks",
             ()-> CreativeModeTab.builder().icon(()-> new ItemStack(ModBlock.POOP_BLOCK.get()))
                     .withTabsBefore(TABITEM.getId())
                     .title(Component.translatable("creativetab.forgemodmikh.BlockTab"))
@@ -32,13 +32,22 @@ public class ModCreativeModeTab {
                         output.accept(ModBlock.POOP_BLOCK.get());
                         output.accept(ModBlock.DRIED_POOP_BLOCK.get());
                         output.accept(ModBlock.BOOM_BLOCK.get());
+                        output.accept(ModBlock.SKULL_LAMP.get());
+
+                        output.accept(ModBlock.VOID_BLOCK.get());
+                        output.accept(ModBlock.VOID_BUTTON.get());
+                        output.accept(ModBlock.VOID_DOOR.get());
+                        output.accept(ModBlock.VOID_SLAB.get());
+                        output.accept(ModBlock.VOID_STAIR.get());
+                        output.accept(ModBlock.VOID_WALL.get());
+
                     })
                     .build()
     );//----------------------------------------TOOLS
-    public static final RegistryObject<CreativeModeTab> TABTOOLS = CREATIVE_MODE_TABS.register("forgemodmikh_tools",
+    public static final RegistryObject<CreativeModeTab> TABTOOLS = CREATIVE_MODE_TABS.register(ForgeModMIKH.MOD_ID + "_tools",
             ()-> CreativeModeTab.builder().icon(()-> new ItemStack(ModItem.CHISELER.get()))
                     .withTabsBefore(TABBLOCK.getId())
-                    .title(Component.translatable("creativetab.forgemodmikh.ItemTab"))
+                    .title(Component.translatable("creativetab.forgemodmikh.ToolTab"))
                     .displayItems((itemDisplayParameters,output)->{
                         output.accept(ModItem.CHISELER.get());
                     })
