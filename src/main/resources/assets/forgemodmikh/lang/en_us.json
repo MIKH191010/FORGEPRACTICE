@@ -1,11 +1,21 @@
 {
   "item.forgemodmikh.poop": "Poop",
+
   "item.forgemodmikh.chiseler": "Chiseler",
+
+  "item.forgemodmikh.knight_sword": "Knight Sword",
+  "item.forgemodmikh.knight_pickaxe": "Knight Pickaxe",
+  "item.forgemodmikh.knight_axe": "Knight Axe",
+  "item.forgemodmikh.knight_shovel": "Knight Shovel",
+  "item.forgemodmikh.knight_hoe": "Knight Hoe",
+
+
 
   "block.forgemodmikh.poop_block": "Block of Poop",
   "block.forgemodmikh.dried_poop_block": "Block of Dried Poop",
   "block.forgemodmikh.boom_block": "BOOM Block",
   "block.forgemodmikh.skull_lamp": "Skull Lamp",
+
 
 
   "block.forgemodmikh.void_block": "Void Block",
@@ -17,9 +27,12 @@
   "block.forgemodmikh.void_trapdoor": "Void TrapDoor",
 
 
+
   "creativetab.forgemodmikh.ItemTab": "ForgeModMIKH Items",
   "creativetab.forgemodmikh.BlockTab": "ForgeModMIKH Blocks",
   "creativetab.forgemodmikh.ToolTab": "ForgeModMIKH Tools",
+
+
 
   "tooltip.forgemikh.chiseler": "This thing scrapes outer dry layer of Dried Poop Blocks"
 }

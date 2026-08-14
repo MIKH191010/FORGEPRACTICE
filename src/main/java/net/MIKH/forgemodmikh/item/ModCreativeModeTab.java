@@ -50,6 +50,12 @@ public class ModCreativeModeTab {
                     .title(Component.translatable("creativetab.forgemodmikh.ToolTab"))
                     .displayItems((itemDisplayParameters,output)->{
                         output.accept(ModItem.CHISELER.get());
+
+                        output.accept(ModItem.KNIGHT_SWORD.get());
+                        output.accept(ModItem.KNIGHT_PICKAXE.get());
+                        output.accept(ModItem.KNIGHT_AXE.get());
+                        output.accept(ModItem.KNIGHT_SHOVEL.get());
+                        output.accept(ModItem.KNIGHT_HOE.get());
                     })
                     .build()
     );//----------------------------------------
