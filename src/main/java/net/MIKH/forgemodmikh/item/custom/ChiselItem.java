@@ -50,7 +50,6 @@ public class ChiselItem extends Item {
         }
         return InteractionResult.SUCCESS;
     }
-
     @Override
     public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
         super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);

@@ -14,13 +14,16 @@ public class ModDataComponentTypes {
     public static final DeferredRegister<DataComponentType<?>> DATA_COMPONENT_TYPE =
             DeferredRegister.create(Registries.DATA_COMPONENT_TYPE, ForgeModMIKH.MOD_ID);
 
+
+
     public static final RegistryObject<DataComponentType<BlockPos>> COORDINATES = register("coordinates",
             builder -> builder.persistent(BlockPos.CODEC));
+
+
 
     private static <T>RegistryObject<DataComponentType<T>> register(String name, UnaryOperator<DataComponentType.Builder<T>> builderOperator){
         return DATA_COMPONENT_TYPE.register(name , () -> builderOperator.apply(DataComponentType.builder()).build());
     };
-
     public static void register(IEventBus eventBus){
         DATA_COMPONENT_TYPE.register(eventBus);
     }

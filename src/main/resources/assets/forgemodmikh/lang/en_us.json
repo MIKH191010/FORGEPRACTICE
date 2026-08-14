@@ -8,6 +8,12 @@
   "item.forgemodmikh.knight_axe": "Knight Axe",
   "item.forgemodmikh.knight_shovel": "Knight Shovel",
   "item.forgemodmikh.knight_hoe": "Knight Hoe",
+  "item.forgemodmikh.knight_hammer": "Knight Hammer",
+
+  "item.forgemodmikh.knight_helmet": "Knight Helmet",
+  "item.forgemodmikh.knight_chestplate": "Knight Chestplate",
+  "item.forgemodmikh.knight_leggings": "Knight Leggings",
+  "item.forgemodmikh.knight_boots": "Knight Boots",
 
 
 
@@ -34,5 +40,6 @@
 
 
 
-  "tooltip.forgemikh.chiseler": "This thing scrapes outer dry layer of Dried Poop Blocks"
+  "tooltip.forgemikh.chiseler": "This thing scrapes outer dry layer of Dried Poop Blocks",
+  "tooltip.forgemikh.fullarmortooltip": "§b§lOn full set equip:"
 }

@@ -56,6 +56,13 @@ public class ModCreativeModeTab {
                         output.accept(ModItem.KNIGHT_AXE.get());
                         output.accept(ModItem.KNIGHT_SHOVEL.get());
                         output.accept(ModItem.KNIGHT_HOE.get());
+                        output.accept(ModItem.KNIGHT_HAMMER.get());
+
+
+                        output.accept(ModItem.KNIGHT_HELMET.get());
+                        output.accept(ModItem.KNIGHT_CHESTPLATE.get());
+                        output.accept(ModItem.KNIGHT_LEGGINGS.get());
+                        output.accept(ModItem.KNIGHT_BOOTS.get());
                     })
                     .build()
     );//----------------------------------------
