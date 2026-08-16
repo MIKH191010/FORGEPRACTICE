@@ -31,14 +31,14 @@ public class ModArmorItem extends ArmorItem {
     public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
         super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
         Level level = pContext.level();
-        if(level.isClientSide()){
+        if(level != null && level.isClientSide()){
             ArmorItem armorItem = (ArmorItem) pStack.getItem();
             List<MobEffectInstance> list = MATERIAL_TO_EFFECT_MAP.get(armorItem.getMaterial());
             if(list != null) {
-                pTooltipComponents.add(Component.translatable("tooltip.forgemikh.fullarmortooltip"));
+                pTooltipComponents.add(Component.translatable("tooltip.forgemodmikh.fullarmortooltip"));
                 for(MobEffectInstance effect : list) {
                     pTooltipComponents.add(Component.literal(
-                            "§b§l" + effect.getEffect().get().getDisplayName().getString() + toRoman(effect.getAmplifier() + 1)  ));
+                            "§b" + effect.getEffect().get().getDisplayName().getString() + " §bl" + toRoman(effect.getAmplifier() + 1)  ));
                 }
             }
         }
@@ -53,6 +53,7 @@ public class ModArmorItem extends ArmorItem {
     }
     public static String toRoman(int number) {
         return switch (number) {
+            case 0 -> "";
             case 1 -> "I";
             case 2 -> "II";
             case 3 -> "III";

@@ -21,6 +21,8 @@ public class ModCreativeModeTab {
                     .displayItems((itemDisplayParameters,output)->{
                         output.accept(ModItem.POOP.get());
                         output.accept(ModItem.CHISELER.get());
+                        output.accept(ModItem.CUCUMBER.get());
+                        output.accept(ModItem.CUCUMBER_SEEDS.get());
                     })
                     .build()
     );//----------------------------------------BLOCKS
@@ -63,6 +65,10 @@ public class ModCreativeModeTab {
                         output.accept(ModItem.KNIGHT_CHESTPLATE.get());
                         output.accept(ModItem.KNIGHT_LEGGINGS.get());
                         output.accept(ModItem.KNIGHT_BOOTS.get());
+
+
+                        output.accept(ModItem.PHOENIX_BOW.get());
+                        output.accept(ModItem.VS_LORD_FROGG_MUSIC_DISC.get());
                     })
                     .build()
     );//----------------------------------------

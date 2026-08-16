@@ -1,0 +1,41 @@
+{
+  "vs_lord_frogg" : {
+    "subtitle": "sounds.forgemodmikh.vs_lord_frogg",
+    "sounds" : [
+      {
+        "name" : "forgemodmikh:vs_lord_frogg",
+        "stream" :  true
+      }
+    ]
+  },
+  "chisel_use" : {
+    "subtitle": "sounds.forgemodmikh.chisel_use",
+    "sounds" : [
+      "forgemodmikh:chisel_use"]
+  },
+  "void_block_break" : {
+    "subtitle": "sounds.forgemodmikh.void_block_break",
+    "sounds" : [
+      "forgemodmikh:void_block_break"]
+  },
+  "void_block_hit" : {
+    "subtitle": "sounds.forgemodmikh.void_block_hit",
+    "sounds" : [
+      "forgemodmikh:void_block_hit"]
+  },
+  "void_block_step" : {
+    "subtitle": "sounds.forgemodmikh.void_block_step",
+    "sounds" : [
+      "forgemodmikh:void_block_step"]
+  },
+  "void_block_fall" : {
+    "subtitle": "sounds.forgemodmikh.void_block_fall",
+    "sounds" : [
+      "forgemodmikh:void_block_fall"]
+  },
+  "void_block_place" : {
+    "subtitle": "sounds.forgemodmikh.void_block_place",
+    "sounds" : [
+      "forgemodmikh:void_block_place"]
+  }
+}

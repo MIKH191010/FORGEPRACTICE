@@ -1,7 +1,12 @@
 {
   "item.forgemodmikh.poop": "Poop",
+  "item.forgemodmikh.cucumber" : "Cucumber",
+  "item.forgemodmikh.cucumber_seeds" : "Cucumber Seeds",
 
   "item.forgemodmikh.chiseler": "Chiseler",
+
+  "item.forgemodmikh.vs_lord_frogg_music_disc": "VS Lord Frogg Music Disc",
+  "item.forgemodmikh.vs_lord_frogg_music_disc.desc": "Mineysauce - Vs. Lord Frogg",
 
   "item.forgemodmikh.knight_sword": "Knight Sword",
   "item.forgemodmikh.knight_pickaxe": "Knight Pickaxe",
@@ -15,6 +20,10 @@
   "item.forgemodmikh.knight_leggings": "Knight Leggings",
   "item.forgemodmikh.knight_boots": "Knight Boots",
 
+  "item.forgemodmikh.phoenix_bow": "Phoenix Bow",
+
+
+  "enchantment.forgemodmikh.jagged_blade" : "Jagged Blade",
 
 
   "block.forgemodmikh.poop_block": "Block of Poop",
@@ -32,6 +41,8 @@
   "block.forgemodmikh.void_door": "Void Door",
   "block.forgemodmikh.void_trapdoor": "Void TrapDoor",
 
+  "block.forgemodmikh.cucumber_crop" : "Cucumber Crop",
+
 
 
   "creativetab.forgemodmikh.ItemTab": "ForgeModMIKH Items",
@@ -40,6 +51,16 @@
 
 
 
-  "tooltip.forgemikh.chiseler": "This thing scrapes outer dry layer of Dried Poop Blocks",
-  "tooltip.forgemikh.fullarmortooltip": "§b§lOn full set equip:"
+  "tooltip.forgemodmikh.chiseler": "This thing scrapes outer dry layer of Dried Poop Blocks",
+  "tooltip.forgemodmikh.fullarmortooltip": "§b§lOn full set equip:",
+
+  "effect.forgemodmikh.spring_legs" : "Spring Legs",
+  "effect.forgemodmikh.bleeding" : "Bleeding",
+
+  "item.minecraft.potion.effect.spring_legs_potion" : "Springy Potion",
+  "item.minecraft.lingering_potion.effect.spring_legs_potion" : "Lingering Springy Potion",
+  "item.minecraft.splash_potion.effect.spring_legs_potion" : "Splash Springy Potion",
+
+  "painting.forgemodmikh.linhnq.title" : "Boc Tran Su That",
+  "painting.forgemodmikh.linhnq.author" : "linhnqgay"
 }

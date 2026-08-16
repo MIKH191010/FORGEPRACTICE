@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "forgemodmikh:item/chiseler"
+  },
+  "overrides" : [
+    {"predicate" :
+                  {"forgemodmikh:used": 1},
+                  "model" : "forgemodmikh:item/chiseler_used"}
+  ]
+}

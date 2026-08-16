@@ -2,11 +2,14 @@ package net.MIKH.forgemodmikh.datagen;
 
 import net.MIKH.forgemodmikh.ForgeModMIKH;
 import net.MIKH.forgemodmikh.block.ModBlock;
+import net.MIKH.forgemodmikh.block.custom.CucumberCropBlock;
 import net.MIKH.forgemodmikh.block.custom.SkullLamp;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -14,6 +17,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.Function;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -39,6 +44,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlock.VOID_SLAB);
         blockItem(ModBlock.VOID_STAIR);
         blockItem(ModBlock.VOID_TRAPDOOR);
+
+        makeCrop(((CropBlock) ModBlock.CUCUMBER_CROP.get()),"cucumber_crop_state","cucumber_crop_state");
+    }
+
+    public void makeCrop(CropBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> states(state, block, modelName, textureName);
+
+        getVariantBuilder(block).forAllStates(function);
+    }
+
+    private ConfiguredModel[] states(BlockState state, CropBlock block, String modelName, String textureName) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((CucumberCropBlock) block).getAgeProperty()),
+                ResourceLocation.fromNamespaceAndPath(ForgeModMIKH.MOD_ID, "block/" + textureName + state.getValue(((CucumberCropBlock) block).getAgeProperty()))).renderType("cutout"));
+
+        return models;
     }
 
     private void customLamp() {

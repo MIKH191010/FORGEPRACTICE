@@ -3,9 +3,15 @@ package net.MIKH.forgemodmikh;
 import com.mojang.logging.LogUtils;
 import net.MIKH.forgemodmikh.block.ModBlock;
 import net.MIKH.forgemodmikh.component.ModDataComponentTypes;
+import net.MIKH.forgemodmikh.effect.ModEffects;
+import net.MIKH.forgemodmikh.enchantment.ModEnchantmentEffects;
 import net.MIKH.forgemodmikh.item.ModCreativeModeTab;
 import net.MIKH.forgemodmikh.item.ModItem;
+import net.MIKH.forgemodmikh.potion.ModPotions;
+import net.MIKH.forgemodmikh.sound.ModSounds;
+import net.MIKH.forgemodmikh.util.ModItemProperties;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -43,6 +49,14 @@ public class ForgeModMIKH
         ModBlock.register(modEventBus);
 
         ModDataComponentTypes.register(modEventBus);
+
+        ModSounds.register(modEventBus);
+
+        ModEffects.register(modEventBus);
+
+        ModPotions.register(modEventBus);
+
+        ModEnchantmentEffects.register(modEventBus);
 //-----------------------------------------------------
 
 
@@ -54,7 +68,10 @@ public class ForgeModMIKH
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
+        event.enqueueWork(() ->{
+            ComposterBlock.COMPOSTABLES.put(ModItem.CUCUMBER.get(),0.4f);
+            ComposterBlock.COMPOSTABLES.put(ModItem.CUCUMBER_SEEDS.get(),0.2f);
+        });
     }
 
     // Add the example block item to the building blocks tab
@@ -87,7 +104,7 @@ public class ForgeModMIKH
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
+            ModItemProperties.addCustomItemProperties();
         }
     }
 }

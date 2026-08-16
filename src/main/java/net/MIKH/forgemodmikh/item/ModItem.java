@@ -1,9 +1,11 @@
 package net.MIKH.forgemodmikh.item;
 
 import net.MIKH.forgemodmikh.ForgeModMIKH;
+import net.MIKH.forgemodmikh.block.ModBlock;
 import net.MIKH.forgemodmikh.item.custom.ChiselItem;
 import net.MIKH.forgemodmikh.item.custom.HammerItem;
 import net.MIKH.forgemodmikh.item.custom.ModArmorItem;
+import net.MIKH.forgemodmikh.sound.ModSounds;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -16,10 +18,19 @@ public class ModItem {
 
     public static final RegistryObject<Item> POOP = ITEMS.register("poop",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> CUCUMBER = ITEMS.register("cucumber",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.CUCUMBER)));
+
+    public static final RegistryObject<Item> CUCUMBER_SEEDS = ITEMS.register("cucumber_seeds",
+            () -> new ItemNameBlockItem(ModBlock.CUCUMBER_CROP.get(),new Item.Properties()));
+
     public static final RegistryObject<Item> CHISELER = ITEMS.register("chiseler",
             () -> new ChiselItem(new Item.Properties()
                     .durability(32)
             ));
+    public static  final RegistryObject<Item> VS_LORD_FROGG_MUSIC_DISC = ITEMS.register("vs_lord_frogg_music_disc",
+            () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.VS_LORD_FROGG_KEY).stacksTo(1)));
 
     public static final RegistryObject<Item> KNIGHT_SWORD = ITEMS.register("knight_sword",
             () -> new SwordItem(ModToolTiers.KNIGHT,new Item.Properties()
@@ -61,6 +72,9 @@ public class ModItem {
     public static final RegistryObject<Item> KNIGHT_BOOTS = ITEMS.register("knight_boots",
             () -> new ModArmorItem(ModArmorMaterials.KNIGHT_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(20))));
+
+    public static final RegistryObject<Item> PHOENIX_BOW = ITEMS.register("phoenix_bow",
+            () -> new BowItem(new Item.Properties().durability(500)));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

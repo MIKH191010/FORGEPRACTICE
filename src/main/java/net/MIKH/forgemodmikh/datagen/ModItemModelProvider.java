@@ -48,6 +48,9 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         //basicItem(ModItem.CHISELER.get());
         basicItem(ModItem.POOP.get());
+        basicItem(ModItem.CUCUMBER.get());
+        basicItem(ModItem.CUCUMBER_SEEDS.get());
+        basicItem(ModItem.VS_LORD_FROGG_MUSIC_DISC.get());
 
 
         buttonItem(ModBlock.VOID_BUTTON,ModBlock.VOID_BLOCK);
@@ -56,7 +59,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleBlockItem(ModBlock.VOID_DOOR);
 
-        handheldItem(ModItem.CHISELER);
+       // handheldItem(ModItem.CHISELER);
 
         handheldItem(ModItem.KNIGHT_SWORD);
         handheldItem(ModItem.KNIGHT_PICKAXE);

@@ -2,8 +2,10 @@ package net.MIKH.forgemodmikh.block;
 
 import net.MIKH.forgemodmikh.ForgeModMIKH;
 import net.MIKH.forgemodmikh.block.custom.BoomBlock;
+import net.MIKH.forgemodmikh.block.custom.CucumberCropBlock;
 import net.MIKH.forgemodmikh.block.custom.SkullLamp;
 import net.MIKH.forgemodmikh.item.ModItem;
+import net.MIKH.forgemodmikh.sound.ModSounds;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -14,10 +16,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.function.DoubleBinaryOperator;
 import java.util.function.Supplier;
 
-import static net.minecraft.world.item.Items.registerBlock;
 
 public class ModBlock {
     public static final DeferredRegister<Block> BLOCKS =
@@ -55,7 +55,7 @@ public class ModBlock {
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(1f)
                     .requiresCorrectToolForDrops()
-                    .sound(SoundType.GLASS)));
+                    .sound(ModSounds.VOID_BLOCK_SOUNDS)));
 
     public static final RegistryObject<SlabBlock> VOID_SLAB = registerBlock("void_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.of().strength(1f).requiresCorrectToolForDrops()));
@@ -75,6 +75,10 @@ public class ModBlock {
             () -> new TrapDoorBlock(BlockSetType.IRON,
                     BlockBehaviour.Properties.of().strength(1f).requiresCorrectToolForDrops()));
 
+
+
+    public static final RegistryObject<Block> CUCUMBER_CROP = BLOCKS.register("cucumber_crop",
+            ()-> new CucumberCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
     //-------------------------------------------------------------------
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name,block);

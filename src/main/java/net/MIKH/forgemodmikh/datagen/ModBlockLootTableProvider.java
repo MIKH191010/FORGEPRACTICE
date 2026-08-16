@@ -1,10 +1,16 @@
 package net.MIKH.forgemodmikh.datagen;
 
 import net.MIKH.forgemodmikh.block.ModBlock;
+import net.MIKH.forgemodmikh.block.custom.CucumberCropBlock;
+import net.MIKH.forgemodmikh.item.ModItem;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.piston.MovingPistonBlock;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -31,6 +37,13 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlock.VOID_DOOR.get(),
                 block -> createDoorTable(ModBlock.VOID_DOOR.get()));
         dropSelf(ModBlock.VOID_BUTTON.get());
+
+
+        LootItemCondition.Builder lootItemConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlock.CUCUMBER_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CucumberCropBlock.AGE,CucumberCropBlock.MAX_AGE));
+
+        this.add(ModBlock.CUCUMBER_CROP.get(),this.createCropDrops(ModBlock.CUCUMBER_CROP.get(),
+                ModItem.CUCUMBER.get(),ModItem.CUCUMBER_SEEDS.get(),lootItemConditionBuilder));
 
 //        this.add(ModBlock.ORE.get(), -----------------ORE DROP
 //                block -> createOreDrop(ModBlock.ORE.get(),ModItem.ITEM.get()));

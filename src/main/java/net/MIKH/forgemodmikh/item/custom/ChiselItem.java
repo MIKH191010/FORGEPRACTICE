@@ -1,6 +1,7 @@
 package net.MIKH.forgemodmikh.item.custom;
 
 import net.MIKH.forgemodmikh.component.ModDataComponentTypes;
+import net.MIKH.forgemodmikh.sound.ModSounds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -43,7 +44,7 @@ public class ChiselItem extends Item {
                         ((ServerLevel) level),
                         ((ServerPlayer) pContext.getPlayer()),
                         item -> pContext.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
-                level.playSound(null,pContext.getClickedPos(), SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS);
+                level.playSound(null,pContext.getClickedPos(), ModSounds.CHISEL_USE.get(), SoundSource.BLOCKS);
 
                 pContext.getItemInHand().set(ModDataComponentTypes.COORDINATES.get(),pContext.getClickedPos());
             }
@@ -53,7 +54,7 @@ public class ChiselItem extends Item {
     @Override
     public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
         super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
-        pTooltipComponents.add(Component.translatable("tooltip.forgemikh.chiseler"));
+        pTooltipComponents.add(Component.translatable("tooltip.forgemodmikh.chiseler"));
         if (pStack.get(ModDataComponentTypes.COORDINATES.get()) != null){
             pTooltipComponents.add(
                                     Component.literal("Last block of shit scraped at: " +

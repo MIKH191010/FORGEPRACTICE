@@ -1,0 +1,6 @@
+{
+    "parent": "forgemodmikh:item/phoenix_bow",
+    "textures": {
+        "layer0": "forgemodmikh:item/phoenix_bow_pulling_0"
+    }
+}
