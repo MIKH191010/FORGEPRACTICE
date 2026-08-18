@@ -7,6 +7,7 @@ import net.MIKH.forgemodmikh.effect.ModEffects;
 import net.MIKH.forgemodmikh.enchantment.ModEnchantmentEffects;
 import net.MIKH.forgemodmikh.entity.ModEntities;
 import net.MIKH.forgemodmikh.entity.client.CaciRenderer;
+import net.MIKH.forgemodmikh.entity.client.JavelinProjectileRenderer;
 import net.MIKH.forgemodmikh.item.ModCreativeModeTab;
 import net.MIKH.forgemodmikh.item.ModItem;
 import net.MIKH.forgemodmikh.potion.ModPotions;
@@ -111,6 +112,7 @@ public class ForgeModMIKH
         public static void onClientSetup(FMLClientSetupEvent event) {
             ModItemProperties.addCustomItemProperties();
             EntityRenderers.register(ModEntities.CACI.get(), CaciRenderer::new);
+            EntityRenderers.register(ModEntities.JAVELIN.get(), JavelinProjectileRenderer::new);
         }
     }
 }

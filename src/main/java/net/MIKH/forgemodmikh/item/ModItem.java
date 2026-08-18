@@ -5,6 +5,7 @@ import net.MIKH.forgemodmikh.block.ModBlock;
 import net.MIKH.forgemodmikh.entity.ModEntities;
 import net.MIKH.forgemodmikh.item.custom.ChiselItem;
 import net.MIKH.forgemodmikh.item.custom.HammerItem;
+import net.MIKH.forgemodmikh.item.custom.JavelinItem;
 import net.MIKH.forgemodmikh.item.custom.ModArmorItem;
 import net.MIKH.forgemodmikh.sound.ModSounds;
 import net.minecraft.world.item.*;
@@ -86,6 +87,9 @@ public class ModItem {
 
     public static final RegistryObject<Item> CACI_SPAWN_EGG = ITEMS.register("caci_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.CACI,0x46612c,0x222034,new Item.Properties()));
+
+    public static final RegistryObject<Item> JAVELIN = ITEMS.register("javelin",
+            ()-> new JavelinItem(new Item.Properties().stacksTo(16)));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

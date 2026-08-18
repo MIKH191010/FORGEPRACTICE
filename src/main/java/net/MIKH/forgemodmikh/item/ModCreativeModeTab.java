@@ -26,6 +26,7 @@ public class ModCreativeModeTab {
                         output.accept(ModItem.MOON_COMPOUND.get());
                         output.accept(ModItem.MOON_FRAGMENT.get());
                         output.accept(ModItem.CACI_SPAWN_EGG.get());
+                        output.accept(ModItem.JAVELIN.get());
                         output.accept(ModBlock.MAPLE_SAPLING.get());
                     })
                     .build()

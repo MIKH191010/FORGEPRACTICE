@@ -3,6 +3,7 @@ package net.MIKH.forgemodmikh.event;
 import net.MIKH.forgemodmikh.ForgeModMIKH;
 import net.MIKH.forgemodmikh.entity.ModEntities;
 import net.MIKH.forgemodmikh.entity.client.CaciModel;
+import net.MIKH.forgemodmikh.entity.client.JavelinProjectileModel;
 import net.MIKH.forgemodmikh.entity.custom.CaciEntity;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.animal.Animal;
@@ -18,6 +19,7 @@ public class ModEventBusEvent {
     @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event){
         event.registerLayerDefinition(CaciModel.LAYER_LOCATION,CaciModel::createBodyLayer);
+        event.registerLayerDefinition(JavelinProjectileModel.LAYER_LOCATION,JavelinProjectileModel::createBodyLayer);
     }
     @SubscribeEvent
     public static void registerAttribute(EntityAttributeCreationEvent event){

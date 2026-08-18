@@ -24,6 +24,8 @@
 
   "item.forgemodmikh.phoenix_bow": "Phoenix Bow",
 
+  "item.forgemodmikh.javelin": "Javelin",
+
   "item.forgemodmikh.caci_spawn_egg": "Caci Spawn Egg",
 
 
@@ -81,5 +83,6 @@
   "painting.forgemodmikh.linhnq.title" : "Boc Tran Su That",
   "painting.forgemodmikh.linhnq.author" : "linhnqgay",
 
-  "entity.forgemodmikh.caci" : "Caci"
+  "entity.forgemodmikh.caci" : "Caci",
+  "entity.forgemodmikh.javelin" : "Javelin"
 }
