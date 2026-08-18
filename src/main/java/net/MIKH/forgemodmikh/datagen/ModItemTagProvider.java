@@ -1,6 +1,7 @@
 package net.MIKH.forgemodmikh.datagen;
 
 import net.MIKH.forgemodmikh.ForgeModMIKH;
+import net.MIKH.forgemodmikh.block.ModBlock;
 import net.MIKH.forgemodmikh.item.ModItem;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -28,5 +29,14 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItem.KNIGHT_CHESTPLATE.get())
                 .add(ModItem.KNIGHT_LEGGINGS.get())
                 .add(ModItem.KNIGHT_BOOTS.get());
+        tag(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlock.MAPLE_LOG.get().asItem())
+                .add(ModBlock.STRIPPED_MAPLE_LOG.get().asItem())
+                .add(ModBlock.MAPLE_WOOD.get().asItem())
+                .add(ModBlock.STRIPPED_MAPLE_WOOD.get().asItem()
+                );
+        tag(ItemTags.PLANKS)
+                .add(ModBlock.MAPLE_PLANKS.get().asItem()
+                );
     }
 }

@@ -23,6 +23,10 @@ public class ModCreativeModeTab {
                         output.accept(ModItem.CHISELER.get());
                         output.accept(ModItem.CUCUMBER.get());
                         output.accept(ModItem.CUCUMBER_SEEDS.get());
+                        output.accept(ModItem.MOON_COMPOUND.get());
+                        output.accept(ModItem.MOON_FRAGMENT.get());
+                        output.accept(ModItem.CACI_SPAWN_EGG.get());
+                        output.accept(ModBlock.MAPLE_SAPLING.get());
                     })
                     .build()
     );//----------------------------------------BLOCKS
@@ -42,6 +46,18 @@ public class ModCreativeModeTab {
                         output.accept(ModBlock.VOID_SLAB.get());
                         output.accept(ModBlock.VOID_STAIR.get());
                         output.accept(ModBlock.VOID_WALL.get());
+
+                        output.accept(ModBlock.MOON_ORE.get());
+                        output.accept(ModBlock.MOON_DEEPSLATE_ORE.get());
+                        output.accept(ModBlock.MOON_NETHER_ORE.get());
+                        output.accept(ModBlock.MOON_END_ORE.get());
+
+                        output.accept(ModBlock.MAPLE_LOG.get());
+                        output.accept(ModBlock.STRIPPED_MAPLE_LOG.get());
+                        output.accept(ModBlock.MAPLE_WOOD.get());
+                        output.accept(ModBlock.STRIPPED_MAPLE_WOOD.get());
+                        output.accept(ModBlock.MAPLE_LEAVES.get());
+                        output.accept(ModBlock.MAPLE_PLANKS.get());
 
                     })
                     .build()

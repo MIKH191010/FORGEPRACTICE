@@ -30,6 +30,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlock.BOOM_BLOCK);
         blockWithItem(ModBlock.POOP_BLOCK);
         blockWithItem(ModBlock.DRIED_POOP_BLOCK);
+
+        blockWithItem(ModBlock.MOON_ORE);
+        blockWithItem(ModBlock.MOON_DEEPSLATE_ORE);
+        blockWithItem(ModBlock.MOON_NETHER_ORE);
+        blockWithItem(ModBlock.MOON_END_ORE);
+
         customLamp();
 
         blockWithItem(ModBlock.VOID_BLOCK);
@@ -46,6 +52,31 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlock.VOID_TRAPDOOR);
 
         makeCrop(((CropBlock) ModBlock.CUCUMBER_CROP.get()),"cucumber_crop_state","cucumber_crop_state");
+
+        logBlock(ModBlock.MAPLE_LOG.get());
+        logBlock(ModBlock.STRIPPED_MAPLE_LOG.get());
+        axisBlock(ModBlock.MAPLE_WOOD.get(),blockTexture(ModBlock.MAPLE_LOG.get()),blockTexture(ModBlock.MAPLE_LOG.get()));
+        axisBlock(ModBlock.STRIPPED_MAPLE_WOOD.get(),blockTexture(ModBlock.STRIPPED_MAPLE_LOG.get()),blockTexture(ModBlock.STRIPPED_MAPLE_LOG.get()));
+
+        blockItem(ModBlock.MAPLE_LOG);
+        blockItem(ModBlock.STRIPPED_MAPLE_LOG);
+        blockItem(ModBlock.MAPLE_WOOD);
+        blockItem(ModBlock.STRIPPED_MAPLE_WOOD);
+
+        blockWithItem(ModBlock.MAPLE_PLANKS);
+
+        saplingBlock(ModBlock.MAPLE_SAPLING);
+        leavesBlock(ModBlock.MAPLE_LEAVES);
+    }
+
+    private void saplingBlock(RegistryObject<Block> blockRegistryObject){
+        simpleBlock(blockRegistryObject.get(),models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
+                blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+
+    private void leavesBlock(RegistryObject<Block> blockRegistryObject){
+        simpleBlockWithItem(blockRegistryObject.get(),models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
+                ResourceLocation.parse("minecraft:block/leaves"),"all",blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
 
     public void makeCrop(CropBlock block, String modelName, String textureName) {

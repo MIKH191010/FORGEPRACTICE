@@ -5,11 +5,15 @@ import net.MIKH.forgemodmikh.block.ModBlock;
 import net.MIKH.forgemodmikh.component.ModDataComponentTypes;
 import net.MIKH.forgemodmikh.effect.ModEffects;
 import net.MIKH.forgemodmikh.enchantment.ModEnchantmentEffects;
+import net.MIKH.forgemodmikh.entity.ModEntities;
+import net.MIKH.forgemodmikh.entity.client.CaciRenderer;
 import net.MIKH.forgemodmikh.item.ModCreativeModeTab;
 import net.MIKH.forgemodmikh.item.ModItem;
 import net.MIKH.forgemodmikh.potion.ModPotions;
 import net.MIKH.forgemodmikh.sound.ModSounds;
 import net.MIKH.forgemodmikh.util.ModItemProperties;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.api.distmarker.Dist;
@@ -57,6 +61,8 @@ public class ForgeModMIKH
         ModPotions.register(modEventBus);
 
         ModEnchantmentEffects.register(modEventBus);
+
+        ModEntities.register(modEventBus);
 //-----------------------------------------------------
 
 
@@ -102,9 +108,9 @@ public class ForgeModMIKH
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
+        public static void onClientSetup(FMLClientSetupEvent event) {
             ModItemProperties.addCustomItemProperties();
+            EntityRenderers.register(ModEntities.CACI.get(), CaciRenderer::new);
         }
     }
 }

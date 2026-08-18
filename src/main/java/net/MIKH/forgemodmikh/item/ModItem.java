@@ -2,11 +2,13 @@ package net.MIKH.forgemodmikh.item;
 
 import net.MIKH.forgemodmikh.ForgeModMIKH;
 import net.MIKH.forgemodmikh.block.ModBlock;
+import net.MIKH.forgemodmikh.entity.ModEntities;
 import net.MIKH.forgemodmikh.item.custom.ChiselItem;
 import net.MIKH.forgemodmikh.item.custom.HammerItem;
 import net.MIKH.forgemodmikh.item.custom.ModArmorItem;
 import net.MIKH.forgemodmikh.sound.ModSounds;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -17,6 +19,12 @@ public class ModItem {
             DeferredRegister.create(ForgeRegistries.ITEMS, ForgeModMIKH.MOD_ID);
 
     public static final RegistryObject<Item> POOP = ITEMS.register("poop",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> MOON_FRAGMENT = ITEMS.register("moon_fragment",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> MOON_COMPOUND = ITEMS.register("moon_compound",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> CUCUMBER = ITEMS.register("cucumber",
@@ -75,6 +83,9 @@ public class ModItem {
 
     public static final RegistryObject<Item> PHOENIX_BOW = ITEMS.register("phoenix_bow",
             () -> new BowItem(new Item.Properties().durability(500)));
+
+    public static final RegistryObject<Item> CACI_SPAWN_EGG = ITEMS.register("caci_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.CACI,0x46612c,0x222034,new Item.Properties()));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

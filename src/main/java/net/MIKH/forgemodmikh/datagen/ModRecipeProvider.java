@@ -24,6 +24,8 @@ public class ModRecipeProvider extends RecipeProvider {
 
         List<ItemLike> poopBlockSmeltingList = List.of(ModBlock.POOP_BLOCK.get());
 
+        List<ItemLike> moonSmeltingList = List.of(ModItem.MOON_FRAGMENT.get());
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlock.POOP_BLOCK.get())
                 .pattern("AAA")
                 .pattern("AAA")
@@ -56,6 +58,8 @@ public class ModRecipeProvider extends RecipeProvider {
 
         oreSmelting(pRecipeOutput,poopBlockSmeltingList,RecipeCategory.MISC,ModBlock.DRIED_POOP_BLOCK.get(),0f,200,"poop");
         oreBlasting(pRecipeOutput,poopBlockSmeltingList,RecipeCategory.MISC,ModBlock.DRIED_POOP_BLOCK.get(),0f,200,"poop");
+
+        oreSmelting(pRecipeOutput,moonSmeltingList,RecipeCategory.MISC,ModItem.MOON_COMPOUND.get(),1f,300,"moon");
 
 
 

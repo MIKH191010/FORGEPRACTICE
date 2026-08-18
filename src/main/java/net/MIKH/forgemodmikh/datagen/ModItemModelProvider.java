@@ -48,9 +48,14 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         //basicItem(ModItem.CHISELER.get());
         basicItem(ModItem.POOP.get());
+        basicItem(ModItem.MOON_FRAGMENT.get());
+        basicItem(ModItem.MOON_COMPOUND.get());
         basicItem(ModItem.CUCUMBER.get());
         basicItem(ModItem.CUCUMBER_SEEDS.get());
         basicItem(ModItem.VS_LORD_FROGG_MUSIC_DISC.get());
+
+        saplingItem(ModBlock.MAPLE_SAPLING);
+
 
 
         buttonItem(ModBlock.VOID_BUTTON,ModBlock.VOID_BLOCK);
@@ -72,8 +77,16 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItem.KNIGHT_CHESTPLATE);
         trimmedArmorItem(ModItem.KNIGHT_LEGGINGS);
         trimmedArmorItem(ModItem.KNIGHT_BOOTS);
+
+
+        withExistingParent(ModItem.CACI_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
     }
 
+    private ItemModelBuilder saplingItem(RegistryObject<Block> item){
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(ForgeModMIKH.MOD_ID,"block/" + item.getId().getPath()));
+    }
 
 
     // Shoutout to El_Redstoniano for making this
