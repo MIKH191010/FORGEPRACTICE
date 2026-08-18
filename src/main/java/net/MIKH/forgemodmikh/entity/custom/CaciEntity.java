@@ -2,6 +2,9 @@ package net.MIKH.forgemodmikh.entity.custom;
 
 import net.MIKH.forgemodmikh.entity.ModEntities;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
@@ -71,5 +74,15 @@ public class CaciEntity extends Animal {
         if(this.level().isClientSide()){
             this.setupAnimationStates();
         }
+    }
+
+    @Override
+    protected @Nullable SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return SoundEvents.ARMADILLO_HURT;
+    }
+
+    @Override
+    protected @Nullable SoundEvent getDeathSound() {
+        return SoundEvents.FROG_DEATH;
     }
 }
