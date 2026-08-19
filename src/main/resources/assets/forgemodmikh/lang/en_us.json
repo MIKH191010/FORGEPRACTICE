@@ -1,5 +1,6 @@
 {
   "item.forgemodmikh.poop": "Poop",
+  "item.forgemodmikh.stick_dance" : "Stick Dance",
   "item.forgemodmikh.cucumber" : "Cucumber",
   "item.forgemodmikh.cucumber_seeds" : "Cucumber Seeds",
   "item.forgemodmikh.moon_fragment": "Moon Fragment",
@@ -86,5 +87,6 @@
   "painting.forgemodmikh.linhnq.author" : "linhnqgay",
 
   "entity.forgemodmikh.caci" : "Caci",
-  "entity.forgemodmikh.javelin" : "Javelin"
+  "entity.forgemodmikh.javelin" : "Javelin",
+  "entity.minecraft.villager.forgemodmikh.discordmod" : "Discord Mod"
 }

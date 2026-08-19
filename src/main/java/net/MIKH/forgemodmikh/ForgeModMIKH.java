@@ -8,16 +8,22 @@ import net.MIKH.forgemodmikh.enchantment.ModEnchantmentEffects;
 import net.MIKH.forgemodmikh.entity.ModEntities;
 import net.MIKH.forgemodmikh.entity.client.CaciRenderer;
 import net.MIKH.forgemodmikh.entity.client.JavelinProjectileRenderer;
+import net.MIKH.forgemodmikh.entity.client.SittableEntityRenderer;
+import net.MIKH.forgemodmikh.entity.custom.SittableEntity;
 import net.MIKH.forgemodmikh.item.ModCreativeModeTab;
 import net.MIKH.forgemodmikh.item.ModItem;
+import net.MIKH.forgemodmikh.particle.ModParticle;
+import net.MIKH.forgemodmikh.particle.PoopParticles;
 import net.MIKH.forgemodmikh.potion.ModPotions;
 import net.MIKH.forgemodmikh.sound.ModSounds;
 import net.MIKH.forgemodmikh.util.ModItemProperties;
+import net.MIKH.forgemodmikh.villager.ModVillagers;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -64,6 +70,10 @@ public class ForgeModMIKH
         ModEnchantmentEffects.register(modEventBus);
 
         ModEntities.register(modEventBus);
+
+        ModVillagers.register(modEventBus);
+
+        ModParticle.register(modEventBus);
 //-----------------------------------------------------
 
 
@@ -113,6 +123,12 @@ public class ForgeModMIKH
             ModItemProperties.addCustomItemProperties();
             EntityRenderers.register(ModEntities.CACI.get(), CaciRenderer::new);
             EntityRenderers.register(ModEntities.JAVELIN.get(), JavelinProjectileRenderer::new);
+            EntityRenderers.register(ModEntities.SITTABLE_ENTITY.get(), SittableEntityRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void registerParticleProvider(RegisterParticleProvidersEvent event){
+            event.registerSpriteSet(ModParticle.POOP_PARTICLES.get(), PoopParticles.Provider::new);
         }
     }
 }

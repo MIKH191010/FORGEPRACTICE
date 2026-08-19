@@ -2,7 +2,12 @@ package net.MIKH.forgemodmikh.entity.custom;
 
 import net.MIKH.forgemodmikh.entity.ModEntities;
 import net.MIKH.forgemodmikh.item.ModItem;
+import net.MIKH.forgemodmikh.particle.ModParticle;
+import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.BlockParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -62,25 +67,34 @@ public class JavelinProjectileEntity extends AbstractArrow {
     @Override
     protected void onHitBlock(BlockHitResult result) {
         super.onHitBlock(result);
-
-        if(result.getDirection() == Direction.SOUTH) {
-            groundedOffset = new Vec2(215f,180f);
+        Level level = this.level();
+        if(level.isClientSide()){
+            for(int i=1;i<=5;i++){
+                float spreadX = ((float) level.getRandom().nextInt(-10, 10) /10) /2;
+                float spreadY = ((float) level.getRandom().nextInt(-10, 10) /10) /2;
+                float spreadZ = ((float) level.getRandom().nextInt(-10, 10) /10) /2;
+                level.addParticle(ParticleTypes.CLOUD,
+                        result.getBlockPos().getX(),result.getBlockPos().getY(),result.getBlockPos().getZ(),
+                        spreadX,spreadY,spreadZ);
+            }
+            for(int i=1;i<=20;i++){
+                float spreadX = ((float) level.getRandom().nextInt(-10, 10) /10);
+                float spreadY = ((float) level.getRandom().nextInt(-10, 10) /10);
+                float spreadZ = ((float) level.getRandom().nextInt(-10, 10) /10);
+                level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK,level().getBlockState(result.getBlockPos())),
+                        this.getX(),this.getY(),this.getZ(),
+                        spreadX,spreadY,spreadZ);
+            }
         }
-        if(result.getDirection() == Direction.NORTH) {
-            groundedOffset = new Vec2(215f, 0f);
-        }
-        if(result.getDirection() == Direction.EAST) {
-            groundedOffset = new Vec2(215f,-90f);
-        }
-        if(result.getDirection() == Direction.WEST) {
-            groundedOffset = new Vec2(215f,90f);
-        }
-
-        if(result.getDirection() == Direction.DOWN) {
-            groundedOffset = new Vec2(115f,180f);
-        }
-        if(result.getDirection() == Direction.UP) {
-            groundedOffset = new Vec2(285f,180f);
-        }
+//        else{
+//            ((ServerLevel) level).sendParticles(new BlockParticleOption(ParticleTypes.BLOCK,level().getBlockState(result.getBlockPos())),
+//                    this.getX(),this.getY(),this.getZ(),10,
+//                    0,0,0,
+//                    1);
+//            ((ServerLevel) level).sendParticles(ParticleTypes.CLOUD,
+//                    this.getX(),this.getY(),this.getZ(),5,
+//                    0,0,0,
+//                    1);
+//        }
     }
 }

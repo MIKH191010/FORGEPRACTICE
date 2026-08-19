@@ -91,6 +91,9 @@ public class ModItem {
     public static final RegistryObject<Item> JAVELIN = ITEMS.register("javelin",
             ()-> new JavelinItem(new Item.Properties().stacksTo(16)));
 
+    public static final RegistryObject<Item> STICK_DANCE = ITEMS.register("stick_dance",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }
