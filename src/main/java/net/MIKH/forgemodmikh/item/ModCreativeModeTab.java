@@ -60,6 +60,8 @@ public class ModCreativeModeTab {
                         output.accept(ModBlock.MAPLE_LEAVES.get());
                         output.accept(ModBlock.MAPLE_PLANKS.get());
 
+                        output.accept(ModBlock.CHAIR.get());
+
                     })
                     .build()
     );//----------------------------------------TOOLS

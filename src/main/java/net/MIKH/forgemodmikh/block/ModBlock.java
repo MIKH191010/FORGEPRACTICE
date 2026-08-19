@@ -1,10 +1,7 @@
 package net.MIKH.forgemodmikh.block;
 
 import net.MIKH.forgemodmikh.ForgeModMIKH;
-import net.MIKH.forgemodmikh.block.custom.BoomBlock;
-import net.MIKH.forgemodmikh.block.custom.CucumberCropBlock;
-import net.MIKH.forgemodmikh.block.custom.ModFlammablePillarBlock;
-import net.MIKH.forgemodmikh.block.custom.SkullLamp;
+import net.MIKH.forgemodmikh.block.custom.*;
 import net.MIKH.forgemodmikh.item.ModItem;
 import net.MIKH.forgemodmikh.sound.ModSounds;
 import net.MIKH.forgemodmikh.worldgen.tree.ModTreeGrowers;
@@ -145,6 +142,9 @@ public class ModBlock {
 
     public static final RegistryObject<Block> MAPLE_SAPLING = registerBlock("maple_sapling",
             ()-> new SaplingBlock(ModTreeGrowers.MAPLE,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> CHAIR = registerBlock("chair",
+            () -> new ChairBlock(BlockBehaviour.Properties.of().noOcclusion()));
 
 
     //-------------------------------------------------------------------
